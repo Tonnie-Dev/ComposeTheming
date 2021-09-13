@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 
-private val LightColors = lightColors(
+private val lightColors = lightColors(
     primary = Red700,
     primaryVariant = Red900,
     secondary = Red700,
@@ -19,6 +19,6 @@ private val LightColors = lightColors(
 @Composable
 fun JetnewsTheme(content:@Composable ()->Unit) {
 
-    MaterialTheme(content = content)
+    MaterialTheme(content = content, colors = lightColors)
 
 }
