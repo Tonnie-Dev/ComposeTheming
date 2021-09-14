@@ -21,7 +21,7 @@ private val Domine = FontFamily(
     Font(resId = R.font.domine_bold, weight = FontWeight.Bold)
 )
 
-//Typograpy Class accepts
+//Typograpy Class accepts TextStyle
 val JetnewsTypography = Typography(
     h4 = TextStyle(
         fontFamily = Montserrat,

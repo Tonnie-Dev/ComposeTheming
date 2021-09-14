@@ -19,6 +19,6 @@ private val lightColors = lightColors(
 @Composable
 fun JetnewsTheme(content:@Composable ()->Unit) {
 
-    MaterialTheme(content = content, colors = lightColors)
+    MaterialTheme(content = content, colors = lightColors, typography = JetnewsTypography)
 
 }
