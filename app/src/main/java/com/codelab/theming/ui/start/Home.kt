@@ -108,12 +108,21 @@ private fun AppBar() {
 fun Header(
     text: String,
     modifier: Modifier = Modifier
-) {
+)
+
+{
+    Surface(
+        modifier = modifier,
+        color = MaterialTheme.colors.surface,
+        contentColor = MaterialTheme.colors.onSurface.copy(alpha = 0.4f)
+    ){
+
+    }
     Text(
         text = text,
         modifier = modifier
             .fillMaxWidth()
-            .background(Color.LightGray)
+            //.background(Color.LightGray)
             .semantics { heading() }
             .padding(horizontal = 16.dp, vertical = 8.dp)
     )
@@ -174,6 +183,8 @@ private fun PostMetadata(
             append(" ${tag.uppercase(Locale.getDefault())} ")
         }
     }
+
+    
     Text(
         text = text,
         modifier = modifier
