@@ -259,3 +259,16 @@ private fun FeaturedPostDarkPreview() {
 private fun HomePreview() {
     Home()
 }
+
+
+@Preview
+@Composable
+fun HeaderLightPreview() {
+    Header(text = "VF News Today")
+}
+
+@Preview
+@Composable
+fun HeaderDarkPreview() {
+    Header(text = "VF News Today")
+}
