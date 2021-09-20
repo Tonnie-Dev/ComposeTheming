@@ -43,6 +43,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.codelab.theming.R
 import com.codelab.theming.data.Post
 import com.codelab.theming.data.PostRepo
@@ -92,7 +93,7 @@ private fun AppBar() {
         title = {
             Text(text = stringResource(R.string.app_title))
         },
-        backgroundColor = MaterialTheme.colors.primary
+        backgroundColor = MaterialTheme.colors.primarySurface
     )
 }
 
@@ -100,18 +101,17 @@ private fun AppBar() {
 fun Header(
     text: String,
     modifier: Modifier = Modifier
-)
-
-{
+) {
     Surface(
         modifier = modifier,
         color = MaterialTheme.colors.surface,
         contentColor = MaterialTheme.colors.onSurface.copy(alpha = 0.4f)
-    ){
+    ) {
 
     }
     Text(
         text = text,
+        style = MaterialTheme.typography.subtitle2,
         modifier = modifier
             .fillMaxWidth()
             //.background(Color.LightGray)
@@ -144,11 +144,13 @@ fun FeaturedPost(
             val padding = Modifier.padding(horizontal = 16.dp)
             Text(
                 text = post.title,
-                modifier = padding
+                modifier = padding,
+                style = MaterialTheme.typography.h6
             )
             Text(
                 text = post.metadata.author.name,
-                modifier = padding
+                modifier = padding,
+                style = MaterialTheme.typography.body2
             )
             PostMetadata(post, padding)
             Spacer(Modifier.height(16.dp))
@@ -176,13 +178,13 @@ private fun PostMetadata(
         }
     }
 
-   CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
+    CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
 
-Text(
-        text = text,
-        modifier = modifier
-  //  color = MaterialTheme.colors.onSurface.copy(ContentAlpha.medium)
-    )
+        Text(
+            text = text,
+            modifier = modifier
+            //  color = MaterialTheme.colors.onSurface.copy(ContentAlpha.medium)
+        )
     }
 
 
@@ -236,6 +238,17 @@ private fun FeaturedPostPreview() {
         FeaturedPost(post = post)
     }
 
+
+
+
+
+    Text(
+        text = "The Day of the GOAT",
+        style = MaterialTheme.typography.subtitle2,
+        fontSize = 22.sp // explicit size overrides the size in the style
+    )
+
+
 }
 
 @Preview("Home")
@@ -243,3 +256,5 @@ private fun FeaturedPostPreview() {
 private fun HomePreview() {
     Home()
 }
+
+
